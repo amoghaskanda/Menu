@@ -1,7 +1,8 @@
 ﻿# Order Menu
 
 This project is a .NET Web application written using C# and Blazor. It renders a page allowing users to order drinks.
-[image](./Static/preview.png)
+
+![Preview](./Menu/Static/preview.png)
 
 # Prerequisites
 
