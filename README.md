@@ -1,6 +1,7 @@
 ﻿# Order Menu
 
 This project is a .NET Web application written using C# and Blazor. It renders a page allowing users to order drinks.
+[image](./Static/preview.png)
 
 # Prerequisites
 
@@ -43,3 +44,8 @@ dotnet run
     - Run: Debug > Start Debugging
 ## Run
 The application opens automatically. [Click here](http://localhost:3000) if the application does not open.
+```
+Sample discount codes: 
+[1] abc10: 10%
+[2] xyz20: 20%
+```

@@ -67,7 +67,7 @@
     </FluentDialog>
     <FluentButton OnClick="@(() => _dialog!.Show())" Appearance="Appearance.Accent"
         IconStart="new Icons.Filled.Size20.PaymentWireless().WithColor(Color.Lightweight)"
-                  Disabled="@(GetTotal(Items)==0)" class="header">
+        Disabled="@(GetTotal(Items)==0)" class="header">
         Checkout
     </FluentButton>
     @if (Items.All(Item => Item.Count == 0))
