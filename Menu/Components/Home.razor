@@ -63,9 +63,9 @@
                 Cash
             </FluentButton>
         </FluentStack>
-        <FluentButton Appearance="Appearance.Accent" Autofocus="true" @onclick="@(() => _dialog.Hide())">Close dialog</FluentButton>
+        <FluentButton Appearance="Appearance.Accent" Autofocus="true" @onclick="@(() => _dialog!.Hide())">Close dialog</FluentButton>
     </FluentDialog>
-    <FluentButton OnClick="@(() => _dialog.Show())" Appearance="Appearance.Accent"
+    <FluentButton OnClick="@(() => _dialog!.Show())" Appearance="Appearance.Accent"
         IconStart="new Icons.Filled.Size20.PaymentWireless().WithColor(Color.Lightweight)"
                   Disabled="@(GetTotal(Items)==0)" class="header">
         Checkout
