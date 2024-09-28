@@ -1,11 +1,15 @@
-namespace Menu.Components.Pages
+using Microsoft.FluentUI.AspNetCore.Components;
+
+namespace Menu.Components
 {
     public partial class Home
     {
         string? Discount { get; set; }
         bool IsValidateClicked { get; set; } = false;
-        bool HasCheckedOut { get; set; } = false;
         bool HasPaid { get; set; } = false;
+        bool Hidden { get; set; } = true;
+        public FluentDialog? _dialog { get; set; }
+
         readonly string[] ValidCodes = { "abc10", "xyz20" };
         List<Item> Items = new()
         {
@@ -15,15 +19,32 @@ namespace Menu.Components.Pages
             new("Chocolate", 4)
         };
 
+        protected override void OnInitialized()
+        {
+            Reset();
+            _dialog?.Hide();
+        }
+
         public void Reset()
         {
-            foreach (var item in Items) { item.Count = 0; }
-            IsValidateClicked = HasCheckedOut = HasPaid = false;
+            foreach (var item in Items)
+                item.Count = 0;
+            IsValidateClicked = HasPaid = false;
         }
 
         public bool IsValidDiscount(string? discount)
         {
             return ValidCodes.Contains(discount);
+        }
+
+        public void OnPayment()
+        {
+            if (Items.Any(item => item.Count > 0))
+            {
+                HasPaid = true;
+                Reset();
+                ToastService.ShowSuccess("Payment successful");
+            }
         }
 
         public double GetTotal(List<Item> Items)

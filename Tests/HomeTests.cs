@@ -1,5 +1,5 @@
 using FluentAssertions;
-using Menu.Components.Pages;
+using Menu.Components;
 using System.Collections;
 
 namespace Tests
@@ -57,6 +57,7 @@ namespace Tests
                 return this.GetEnumerator();
             }
         }
+
         public class HomeTestCasesInvalid : IEnumerable<object[]>
         {
             public static readonly List<object[]> data = new()
